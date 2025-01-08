@@ -1,0 +1,54 @@
+
+/* title */
+
+.custom-header{
+  background: linear-gradient(90deg, #20cf66, #39a971);
+  border-radius: 10px; 
+  letter-spacing: 1.5px; 
+}
+
+/* cards */
+
+.card {
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  min-height: 150px;
+ 
+}
+  
+/* Checkbox */
+input[type='checkbox'] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+  
+.totalPrice {
+  font-size: 1.8rem;
+}
+  
+
+@media (max-width: 576px) {
+   
+h1 {
+  font-size: 2rem;
+}
+  
+h2 {
+  font-size: 1.2rem;
+}
+
+label{
+  font-size: 0.8rem;
+}
+input[type='checkbox'] {
+  width: 15px;
+  height: 15px;
+}
+p {
+  font-size: 0.8rem; 
+  word-break: break-word; 
+}
+    
+}
+  
