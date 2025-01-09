@@ -1,0 +1,26 @@
+.btn-round {
+  width: 20px;
+  height: 20px;
+  font-size: 0.75rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-round {
+  width: 56px;
+  height: auto;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.text-small {
+  font-size: 1rem; 
+}
+
+@media (max-width: 576px) {
+  .text-small {
+    font-size: 0.8rem; 
+  }
+}
