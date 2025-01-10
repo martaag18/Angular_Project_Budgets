@@ -1,15 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { BudgetService } from '../../models/budget';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { PanelFormValues } from '../../models/interfaces';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDialog} from '@angular/material/dialog';
+import { PopUpComponent } from './pop-up/pop-up.component';
+
+
+
 
 @Component({
   selector: 'app-panel',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, MatIconModule],
   templateUrl: './panel.component.html',
   styleUrls: ['./panel.component.scss'],
 })
 export class PanelComponent {
+
+  private dialog = inject(MatDialog); // Inyecta MatDialog fuera del constructor
 
   constructor(private budgetService: BudgetService) {
     //2.Calcular coste web al cargar el panel
@@ -50,7 +58,17 @@ export class PanelComponent {
     if (current > 0) {
       this.panelForm.get('languages')?.setValue(current - 1);
     }
-}
+  }
+
+  //Llamada popUp
+
+  openPopUp(){
+    this.dialog.open(PopUpComponent, {
+      width: "40vw",
+      height: "20vw",
+      data: {message: "Afegeix els llenguatges que tindrà el teu projecte. El cost de cada llenguatge és de 30 €"},
+    });
+  }
 }
 
 
