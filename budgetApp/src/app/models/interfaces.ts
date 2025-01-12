@@ -11,12 +11,12 @@ export interface PanelFormValues {
 
 export interface Budget {
   name: string;
-  phone: string;
   email: string;
-  services: string[]; // Aquí guardamos los servicios seleccionados directamente
+  phone: string;
+  services: string[];
   totalPrice: number;
+  date: string; 
   panelValues: PanelFormValues;
-
 }
 
 export interface SelectedServices {

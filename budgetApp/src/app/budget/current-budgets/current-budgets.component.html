@@ -5,10 +5,12 @@
     </div>
   </div>
 
+  <app-sort-buttons></app-sort-buttons>
+
   <div class="row">
     @if (budgets().length > 0) {
       @for (budget of budgets(); track $index) {
-        <div class="card mb-3">
+        <div class="card mb-5">
           <div class="card-body">
             <div class="row">
               <!-- Columna de Información del Usuario -->
@@ -36,10 +38,14 @@
         </div>
       }
     } @else {
-      <p>No hi ha pressupostos encara</p>
+      <p class="mb-5">No hi ha pressupostos encara</p>
     }
   </div>
 </div>
+
+  
+
+
 
 
   

@@ -28,6 +28,7 @@ export class BudgetArrayComponent {
         email: this.budgetForm.value.email!,
         services: this.budgetService.getSelectedServices(), 
         totalPrice: this.budgetService.getTotalPrice(),
+        date: new Date().toISOString(), 
         panelValues: this.budgetService.getPanelValues(),
       };
   

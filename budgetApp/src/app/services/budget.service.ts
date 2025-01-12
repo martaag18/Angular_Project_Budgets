@@ -26,8 +26,8 @@ export class BudgetService {
 
     // Agregamos los servicios seleccionados al array
     if (values.seo) this.selectedServices.push('SEO');
-    if (values.ads) this.selectedServices.push('Ads');
-    if (values.website) this.selectedServices.push('Web');
+    if (values.ads) this.selectedServices.push('ADS');
+    if (values.website) this.selectedServices.push(`Web (${this.selectedPages} pàgines, ${this.selectedLanguages} llenguatges)`);
 
     this.updateTotalPrice();
   }
@@ -38,8 +38,9 @@ export class BudgetService {
     this.selectedLanguages = languages;
 
     // Eliminar de selectedServices lo que hemos almacenado en web para que no se acumule:
-    this.selectedServices = this.selectedServices.filter((service) => service === "seo" || service === "ads");
+    this.selectedServices = this.selectedServices.filter((service) => service === "SEO" || service === "ADS");
     this.selectedServices.push(`Web (${pages} pàgines, ${languages} llenguatges)`);
+    
 
     this.updateTotalPrice();
   }
@@ -56,7 +57,6 @@ export class BudgetService {
   addBudget(budget: Budget): void { //llamado desde budget-array --> agregar nuevo budget al array reactivo budgets
     this.budgets.update((currentBudgets) => [...currentBudgets, budget]);
   }
-
   getSelectedServices(): string[] {
     return [...this.selectedServices]; //llamado desde budget-array --> acceder servicios seleccionados
   }
@@ -67,6 +67,17 @@ export class BudgetService {
       languages: this.selectedLanguages,
     };
   }
+  
+  //MÉTODOS PARA ORDENAR
+
+  getBudgets() {
+    return this.budgets();
+  }
+
+  updateBudgets(orderedBudget: Budget[]): void {
+    this.budgets.set([...orderedBudget]); //copia para mantener inmutabilidad
+  }
+
 }
 
 

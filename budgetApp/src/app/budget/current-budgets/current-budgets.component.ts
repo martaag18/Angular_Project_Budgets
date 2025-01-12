@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { BudgetService } from '../../services/budget.service';
+import { SortButtonsComponent } from './sort-buttons/sort-buttons.component';
 
 @Component({
   selector: 'app-current-budgets',
-  imports: [],
+  imports: [SortButtonsComponent],
   templateUrl: './current-budgets.component.html',
   styleUrls: ['./current-budgets.component.scss'],
 })
