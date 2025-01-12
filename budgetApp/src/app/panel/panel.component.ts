@@ -1,13 +1,10 @@
 import { Component, inject } from '@angular/core';
-import { BudgetService } from '../../models/budget';
+import { BudgetService } from '../services/budget.service';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { PanelFormValues } from '../../models/interfaces';
+import { PanelFormValues } from '../models/interfaces';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialog} from '@angular/material/dialog';
 import { PopUpComponent } from './pop-up/pop-up.component';
-
-
-
 
 @Component({
   selector: 'app-panel',

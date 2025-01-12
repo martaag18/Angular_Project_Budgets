@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <h2 class="mb-4">Demanar pressupost</h2>
+        </div>
+    </div>
+    <form [formGroup] = "budgetForm" (ngSubmit) = "submitBudget()">
+        <div class="row">
+            <div class="col-12 d-flex align-items-center gap-2">
+               <input type="text" formControlName="name" class="form-control" placeholder="Introdueix el teu Nom..." aria-label="Username">
+               @if (budgetForm.get('name')?.invalid && budgetForm.get('name')?.touched) {
+                <div class="error-messages">
+                  @if (budgetForm.get('name')?.errors?.['required']) {
+                    <span class="text-danger">El nom es obligatori</span>
+                  }
+                </div>
+                }
+                <input type="text" formControlName="phone" class="form-control" placeholder="Introdueix el Telèfon..." aria-label="Phone">
+                @if (budgetForm.get('phone')?.invalid && budgetForm.get('phone')?.touched){
+                 <div class="error-message">
+                    @if (budgetForm.get('phone')?.errors?.['required']){
+                       <span class="text-danger">El telèfon és obligatori</span> 
+                    }
+                 </div>
+                }
+                <input type="text" formControlName="email" class="form-control" placeholder="Introdueix el Email..." aria-label="Email">
+                @if (budgetForm.get('email')?.invalid && budgetForm.get('email')?.touched){
+                    <div class="error-message">
+                       @if (budgetForm.get('email')?.errors?.['required']){
+                          <span class="text-danger">El email és obligatori</span> 
+                       }
+                       @if (budgetForm.get('email')?.errors?.['email']){
+                        <span class="text-danger">Necessari format email</span> 
+                     }
+                    </div>
+                   }
+                <button type="submit" class="btn btn-success px-4 py-2 text-nowrap">Sol·licitar Pressupost -></button>   
+            </div>    
+        </div>
+    </form>
+</div>
+
+
+

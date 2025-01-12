@@ -2,6 +2,9 @@
     <!-- Pages Row -->
     <div class="row mb-3 justify-content-end">
       <div class="col-auto d-flex align-items-center text-small">
+        <button class="btn-info" mat-icon-button  (click) = "openPopUp()">
+          <mat-icon>info</mat-icon>
+        </button>
         <label for="pages" class="form-label fw-bold me-3">Número de pàgines:</label>
         <button type="button" class="btn btn-sm btn-outline-secondary btn-round me-2" (click)="decrementPages()">-</button>
         <input type="number" id="pages" formControlName="pages" class="form-control text-center input-round" readonly />
