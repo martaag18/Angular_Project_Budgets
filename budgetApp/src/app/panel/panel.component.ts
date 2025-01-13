@@ -2,17 +2,17 @@ import { Component, inject } from '@angular/core';
 import { BudgetService } from '../services/budget.service';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { PanelFormValues } from '../models/interfaces';
-import { MatIconModule } from '@angular/material/icon';
 import { MatDialog} from '@angular/material/dialog';
 import { PopUpComponent } from './pop-up/pop-up.component';
 
 @Component({
   selector: 'app-panel',
-  imports: [ReactiveFormsModule, MatIconModule],
+  imports: [ReactiveFormsModule],
   templateUrl: './panel.component.html',
   styleUrls: ['./panel.component.scss'],
 })
 export class PanelComponent {
+
 
   private dialog = inject(MatDialog); // Inyecta MatDialog fuera del constructor
 

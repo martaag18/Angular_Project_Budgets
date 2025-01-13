@@ -1,23 +1,27 @@
 import { Component, inject} from '@angular/core';
 import { BudgetService } from '../../../services/budget.service';
-import { faSortUp, faSortDown } from '@fortawesome/free-solid-svg-icons';
+import { faSortUp, faSortDown, faSearch } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FormsModule } from '@angular/forms';
+import { NgClass } from '@angular/common';
 
 
 
 
 @Component({
   selector: 'app-sort-buttons',
-  imports: [FontAwesomeModule],
+  imports: [FontAwesomeModule, FormsModule, NgClass],
   templateUrl: './sort-buttons.component.html',
   styleUrl: './sort-buttons.component.scss'
 })
 export class SortButtonsComponent {
   private budgetService = inject(BudgetService); 
   currentSort: string = '';
-  
+  searchQuery: string = "";
+
   faSortUp = faSortUp;
   faSortDown = faSortDown;
+  faSearch = faSearch;
 
   sortByDate(): void {
     const budgets = this.budgetService.getBudgets();
@@ -58,4 +62,13 @@ export class SortButtonsComponent {
     }
     this.budgetService.updateBudgets(orderedBudgets);
   }
+
+  onSearch(): void {
+    const budgets = this.budgetService.getBudgets();
+    const filteredBudgets = budgets.filter((budget) => budget.name.toLowerCase().includes(this.searchQuery.toLowerCase()));
+    this.budgetService.updateBudgets(filteredBudgets);
+
+  }
+
+
 }

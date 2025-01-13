@@ -5,6 +5,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { of } from 'rxjs'; 
 import { PopUpComponent } from './pop-up/pop-up.component'; 
 
+
 describe('PanelComponent', () => { 
   let dialogMock: any; 
 

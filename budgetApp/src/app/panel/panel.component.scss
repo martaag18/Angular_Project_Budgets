@@ -19,20 +19,6 @@
   font-size: 1rem; 
 }
 
-.btn-info{
-  background-color: #ffff; /* Fondo blanco */
-  border:none;
-}
-
-.btn-info mat-icon {
-  color: #4ef45b; /* Color del icono */
-
-  &:hover{
-    color: #55a15b;
-  }
-}
-
-
 @media (max-width: 576px) {
   .text-small {
     font-size: 0.8rem; 
