@@ -1,4 +1,25 @@
+$primary-green: rgb(58, 215, 73);
+$secondary-green: #39a971;
+
 .card {
     border-radius: 15px;
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);  
 }
+
+.custom-share-btn {
+    background-color: $primary-green;
+    color: white; 
+    padding: 5px 10px; 
+    min-width: unset;
+    border:none;
+    display: flex;
+    align-items: center; 
+    font-size: 18px;
+    
+    &:hover{
+        background-color: $secondary-green;
+    }
+}
+  
+
+  

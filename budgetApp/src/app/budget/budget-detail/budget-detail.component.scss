@@ -1,9 +1,13 @@
 $primary-green: rgb(58, 215, 73);
 $secondary-green: #39a971;
 
+.card-header{
+    background-color: $primary-green;
+}
+
 .btn-success{
     background-color: $primary-green;
-    border:none;
+    border: none;
 
     &:hover{
         background-color: $secondary-green;

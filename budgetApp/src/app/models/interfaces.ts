@@ -10,6 +10,7 @@ export interface PanelFormValues {
 }
 
 export interface Budget {
+  id: string;
   name: string;
   email: string;
   phone: string;

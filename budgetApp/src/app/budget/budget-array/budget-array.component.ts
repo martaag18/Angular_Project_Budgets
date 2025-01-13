@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { BudgetService } from '../../services/budget.service';
 import { Budget } from '../../models/interfaces';
+import { v4 as uuidv4 } from 'uuid';
+
+
 
 @Component({
   selector: 'app-budget-array',
@@ -15,6 +18,7 @@ export class BudgetArrayComponent {
     name: new FormControl('', [Validators.required]),
     phone: new FormControl('', [Validators.required]),
     email: new FormControl('', [Validators.required, Validators.email]),
+    
   });
 
   constructor(private budgetService: BudgetService) {}
@@ -23,6 +27,7 @@ export class BudgetArrayComponent {
     if (this.budgetForm.valid) {
         
       const budget: Budget = {
+        id: uuidv4(), // Genera un UUID único
         name: this.budgetForm.value.name!,
         phone: this.budgetForm.value.phone!,
         email: this.budgetForm.value.email!,

@@ -78,7 +78,15 @@ export class BudgetService {
   updateBudgets(orderedBudget: Budget[]): void {
     this.budgets.set([...orderedBudget]); //copia para mantener inmutabilidad
   }
+  
+  // getBudgetById(id: string): Budget | undefined {
+  //   return this.budgets().find((budget) => budget.id === id); // Busca en el array de presupuestos
+  // }
 
+  getBudgetById(id:string) {
+    return this.budgets().find((budget) => budget.id === id);
+  }
+  
 }
 
 

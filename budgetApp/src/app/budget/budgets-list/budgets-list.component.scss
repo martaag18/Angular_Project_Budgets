@@ -1,3 +1,5 @@
+$primary-green: rgb(58, 215, 73);
+$secondary-green: #39a971;
 
 /* title */
 
@@ -17,7 +19,7 @@
 }
 
 .border-green{
-  border: 2px solid rgb(58, 215, 73);
+  border: 2px solid $primary-green;
 }
   
 /* Checkbox */

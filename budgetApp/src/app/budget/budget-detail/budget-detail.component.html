@@ -1,0 +1,54 @@
+<div class="container mt-5">
+  @if (budget) {
+  <div class="row justify-content-center">
+    <div class="col-8">
+      <div class="card mb-4 shadow-sm">
+        <div class="card-header text-white">
+          <h3 class="mb-0">{{ budget.name }}</h3>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <!-- Información General -->
+            <div class="col-md-6">
+              <p class="text-muted">
+                <strong>Email:</strong> {{ budget.email }}
+              </p>
+              <p class="text-muted">
+                <strong>Telèfon:</strong> {{ budget.phone }}
+              </p>
+              <p class="fw-bold text-success">
+                Total: {{ budget.totalPrice}} €
+              </p>
+            </div>
+            <!-- Servicios Contratados -->
+            <div class="col-md-6">
+              <p class="fw-bold">Serveis contractats:</p>
+              <ul class="list-group">
+                @for (service of budget.services; track $index) {
+                <li class="list-group-item">{{ service }}</li>
+                }
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  } @else {
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-6 mb-5">
+        <h3 class="text-center fw-bold">
+          Aquest ID no conté cap pressupost.
+        </h3>
+      </div>
+    </div>
+  </div>
+  }
+  <div class="justify-content-center text-center mt-5">
+    <button class="btn btn-success">
+      <a class="nav-link" routerLink="">Tornar a l'inici</a>
+    </button>
+  </div>
+</div>

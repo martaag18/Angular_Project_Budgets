@@ -33,6 +33,13 @@
                 <h4 class="text-muted">Total:</h4>
                 <h2 class="fw-bold">{{ budget.totalPrice }} €</h2>
               </div>
+                <!-- Share button - usamos [] para construir una ruta dinámica -->
+                <div class="col-auto share-btn">
+                  <button mat-raised-button color="primary" class="custom-share-btn" [routerLink]="['/budgetDetail', budget.id]"> 
+                    <span class="material-icons">share</span>
+                    Compartir
+                  </button>
+                </div>
             </div>
           </div>
         </div>
