@@ -1,11 +1,19 @@
 # S6. Budgets Project with Angular
 
+
+
 ## 📄 Description
 In this project, we are building a dynamic budget calculator for web services. 
 
 The application allows users to generate a budget based on selected services, customize certain parameters, and keep track of multiple budgets. 
 
 The goal is to practice working with Angular, reactive forms, and implement various user interactions, such as checkboxes, input fields, and dynamic components.
+
+
+
+|   |   |   |
+|---|---|---|
+| ![image](https://github.com/user-attachments/assets/e5b8e3fa-c40a-43bd-af10-4a44dd23a8e6) | ![image](https://github.com/user-attachments/assets/a503e957-0daf-4ef6-9b6f-8243d2971759) | ![image](https://github.com/user-attachments/assets/052631a6-38d8-42bc-8f66-65d792eaf521) |
 
 
 
@@ -62,17 +70,22 @@ ng serve -o
 
 ## 📝 Functionality Overview
 
-Service Selection:
+### Service Selection:
 Users can choose from three services to build a budget:
 
 SEO Campaign (300 €)
+
 Advertising Campaign (400 €)
+
 Website Development (500 €)
+
 Dynamic Price Calculation:
 As users select services, the total price is dynamically updated.
 
 Panel for Web Services:
-Once a user selects a website service, a new panel appears allowing the user to specify the number of pages and languages. The cost for the website is calculated as:
+Once a user selects a website service, a new panel appears allowing the user to specify the number of pages and languages. 
+
+The cost for the website is calculated as:
 (Number of pages * Number of languages * 30 €).
 
 Reactive Forms:
@@ -97,8 +110,11 @@ Users can share a specific budget by copying the URL, which will retain the sele
 To ensure the functionality works correctly:
 
 Verify that the dynamic calculation of the budget price works as expected when services and parameters are selected.
+
 Test that the modal with help information opens and displays correctly.
+
 Check that multiple budgets can be created and stored, and verify sorting and searching functionality.
+
 Make sure the URL updates when a budget is selected, and the shared URL shows the correct options.
 
 
@@ -106,5 +122,7 @@ Make sure the URL updates when a budget is selected, and the shared URL shows th
 ## 💬 Fun Notes
 
 This project is not just about implementing functionality, but also about improving user interaction. 
+
 Seeing your budget form evolve and allowing users to generate and share their custom budgets will bring a lot of satisfaction as you build this application.
+
 Enjoy the process of working with Angular and mastering reactive forms!
